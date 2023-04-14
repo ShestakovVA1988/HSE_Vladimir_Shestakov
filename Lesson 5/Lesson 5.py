@@ -9,7 +9,6 @@ def task_1():
         data = json.load(f)
         data = {dct['inn']: dct for dct in data}
 
-
     with open('traders.csv', 'w') as f:
         writer = csv.writer(f, delimiter=';')
         writer.writerow(['INN', 'OGRN', 'ADDRESS'])
@@ -19,8 +18,6 @@ def task_1():
             r_2 = dct.get('ogrn')
             r_3 = dct.get('address')
             writer.writerow([r_1, r_2, r_3])
-
-
 
 def task_2():
     email_pattern = re.compile(r'\b[0-9a-zA-Z.-_]+@[0-9a-zA-Z.-_]+\.[a-zA-Z]+\b')
@@ -37,7 +34,6 @@ def task_2():
             result[inn] = emails
     with open('emails.json', 'w') as f:
         json.dump(result, f)
-
 
 task_1()
 task_2()
